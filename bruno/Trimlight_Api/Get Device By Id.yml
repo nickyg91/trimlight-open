@@ -1,0 +1,21 @@
+info:
+  name: Get Device By Id
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url}}api/device/{{id}}"
+  auth: inherit
+
+runtime:
+  variables:
+    - name: id
+      value: 2e9c7eae73fab1b430667b2af05d2dbc48566a77
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

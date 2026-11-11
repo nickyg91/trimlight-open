@@ -1,0 +1,11 @@
+namespace Trimlight.Models.Enums;
+
+public enum ColorOrder : byte
+{
+    RGB = 0,
+    RBG = 1,
+    GRB = 2,
+    GBR = 3,
+    BRG = 4,
+    BGR = 5
+}

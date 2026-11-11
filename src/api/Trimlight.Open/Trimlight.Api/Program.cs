@@ -1,3 +1,5 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Trimlight.Api.Endpoints;
 using Trimlight.Integration.Extensions;
 using Trimlight.Models.Configuration;
@@ -18,6 +20,13 @@ ApiSettings settings = new()
     ApiSecret = secret,
     ClientId = clientId
 };
+
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 
 builder.Services.AddSingleton(settings);
 builder.Services.AddApiServices();

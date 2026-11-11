@@ -13,6 +13,11 @@ public class TokenHandler(ITrimlightTokenService tokenService, ApiSettings apiSe
         request.Headers.TryAddWithoutValidation("Authorization", token);
         request.Headers.Add("S-ClientId", apiSettings.ClientId);
         request.Headers.Add("S-Timestamp", timestamp.ToString());
-        return await base.SendAsync(request, cancellationToken);
+        
+        HttpResponseMessage response = await base.SendAsync(request, cancellationToken);
+        
+        string json = await response.Content.ReadAsStringAsync(cancellationToken);
+        Console.WriteLine(json);
+        return response;
     }
 }

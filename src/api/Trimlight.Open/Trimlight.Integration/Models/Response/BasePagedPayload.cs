@@ -1,4 +1,4 @@
-namespace Trimlight.Models.Response;
+namespace Trimlight.Integration.Models.Response;
 
 public record BasePagedPayload<T>
 {

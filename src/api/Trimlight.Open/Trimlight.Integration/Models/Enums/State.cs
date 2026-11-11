@@ -1,4 +1,4 @@
-namespace Trimlight.Models.Enums;
+namespace Trimlight.Integration.Models.Enums;
 public enum State : byte
 {
     Normal = 0,

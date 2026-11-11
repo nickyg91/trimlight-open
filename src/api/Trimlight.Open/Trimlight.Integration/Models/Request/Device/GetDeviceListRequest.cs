@@ -1,4 +1,4 @@
-namespace Trimlight.Models.Request;
+namespace Trimlight.Integration.Models.Request.Device;
 
 public record GetDeviceListRequest
 {

@@ -3,6 +3,7 @@
     <File Path="compose.yaml" />
   </Folder>
   <Project Path="Trimlight.Api/Trimlight.Api.csproj" />
+  <Project Path="Trimlight.Application/Trimlight.Application.csproj" />
   <Project Path="Trimlight.Integration/Trimlight.Integration.csproj" />
   <Project Path="Trimlight.Models/Trimlight.Models.csproj" />
 </Solution>

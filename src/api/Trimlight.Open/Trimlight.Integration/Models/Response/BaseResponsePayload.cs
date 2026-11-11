@@ -1,7 +1,4 @@
-using System.Text.Json.Serialization;
-using Trimlight.Models.Enums;
-
-namespace Trimlight.Models.Response;
+namespace Trimlight.Integration.Models.Response;
 
 public record BasePagedResponse<T> : BaseResponse
 {

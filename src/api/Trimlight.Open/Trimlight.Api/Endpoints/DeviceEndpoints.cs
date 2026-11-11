@@ -1,5 +1,5 @@
+using Trimlight.Integration.Models.Request.Device;
 using Trimlight.Integration.Refit.Api;
-using Trimlight.Models.Request;
 
 namespace Trimlight.Api.Endpoints;
 

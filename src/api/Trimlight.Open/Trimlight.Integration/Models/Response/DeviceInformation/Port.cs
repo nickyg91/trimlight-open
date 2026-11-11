@@ -1,4 +1,4 @@
-namespace Trimlight.Models.Response.DeviceInformation;
+namespace Trimlight.Integration.Models.Response.DeviceInformation;
 
 public record Port
 {

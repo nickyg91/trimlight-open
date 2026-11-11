@@ -1,0 +1,7 @@
+﻿services:
+  trimlight.api:
+    image: trimlight.api
+    build:
+      context: .
+      dockerfile: Trimlight.Api/Dockerfile
+

@@ -1,5 +1,5 @@
 using System.Text.Json.Serialization;
-using Trimlight.Integration.Models.Enums;
+using Trimlight.Models.Enums;
 
 namespace Trimlight.Integration.Models.Response.DeviceInformation;
 

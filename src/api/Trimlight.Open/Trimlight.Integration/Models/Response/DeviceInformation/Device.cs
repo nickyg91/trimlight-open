@@ -1,5 +1,5 @@
 using System.Text.Json.Serialization;
-using Trimlight.Integration.Models.Enums;
+using Trimlight.Models.Enums;
 
 namespace Trimlight.Integration.Models.Response.DeviceInformation;
 
@@ -17,5 +17,5 @@ public record Device
     public Port[]? Ports { get; init; }
     public Effect[]? Effects { get; init; }
     public Pixel[]? Pixels { get; init; }
-    //public Effect? CurrentEffect { get; init; }
+    public Effect? CurrentEffect { get; init; }
 }

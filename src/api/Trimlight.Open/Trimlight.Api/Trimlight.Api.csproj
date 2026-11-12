@@ -14,6 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Trimlight.Application\Trimlight.Application.csproj" />
+      <ProjectReference Include="..\Trimlight.Infrastructure\Trimlight.Infrastructure.csproj" />
       <ProjectReference Include="..\Trimlight.Integration\Trimlight.Integration.csproj" />
       <ProjectReference Include="..\Trimlight.Models\Trimlight.Models.csproj" />
     </ItemGroup>

@@ -1,4 +1,4 @@
-using Trimlight.Integration.Models.Enums;
+using Trimlight.Models.Enums;
 
 namespace Trimlight.Integration.Models.Request.Device;
 

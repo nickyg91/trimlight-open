@@ -1,4 +1,4 @@
-namespace Trimlight.Integration.Models.Enums;
+namespace Trimlight.Models.Enums;
 
 public enum ConnectivityState : byte
 {

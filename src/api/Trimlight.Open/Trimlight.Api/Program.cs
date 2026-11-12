@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Trimlight.Api.Endpoints;
+using Trimlight.Infrastructure.Extensions;
 using Trimlight.Integration.Extensions;
 using Trimlight.Models.Configuration;
 
@@ -14,6 +15,8 @@ builder.Configuration
 
 string secret = builder.Configuration["TRIMLIGHT_API_SECRET"] ?? throw new InvalidOperationException("TRIMLIGHT_API_SECRET is not set");
 string clientId = builder.Configuration["TRIMLIGHT_CLIENT_ID"] ?? throw new InvalidOperationException("TRIMLIGHT_CLIENT_ID is not set");
+string connectionString = (builder.Environment.IsDevelopment() ? builder.Configuration.GetConnectionString("TrimlightOpen") : builder.Configuration["TRIMLIGHT_CONNECTION_STRING"]) 
+                          ?? throw new InvalidOperationException("TRIMLIGHT_CONNECTION_STRING is not set");
 
 ApiSettings settings = new()
 {
@@ -31,6 +34,7 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 builder.Services.AddSingleton(settings);
 builder.Services.AddApiServices();
 builder.Services.AddRefitClient(settings.BaseUrl);
+builder.Services.AddTrimlightDatabase(connectionString);
 // Add services to the container.
 
 WebApplication app = builder.Build();
@@ -40,18 +44,5 @@ WebApplication app = builder.Build();
 app.UseHttpsRedirection();
 
 app.MapDeviceEndpoints();
-
-// app.MapGet("/weatherforecast", () =>
-// {
-//     var forecast = Enumerable.Range(1, 5).Select(index =>
-//             new WeatherForecast
-//             (
-//                 DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-//                 Random.Shared.Next(-20, 55),
-//                 summaries[Random.Shared.Next(summaries.Length)]
-//             ))
-//         .ToArray();
-//     return forecast;
-// });
 
 app.Run();

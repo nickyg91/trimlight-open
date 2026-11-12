@@ -16,4 +16,8 @@
       <PackageReference Include="Refit.HttpClientFactory" Version="16.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Models\Enums\" />
+    </ItemGroup>
+
 </Project>
